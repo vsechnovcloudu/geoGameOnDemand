@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Geocaching map on demand - for kids!</title>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+    
+    <div class = "column">
+      <div id="map_canvas" style="width:100%;height:100%;"></div>
+    </div>
+    
+    <div id = "form" class = "column">
+      Název procházky: <input id="storyName" type="text" value="Zlaty poklad nacistu"><br />
+      Váš tajný kód k procházce: <input id="secretCode" type="text" value="dupinozka"><br />
+      Popište Váš příběh: <textarea id="story" placeholder="Říká se, že v okolí Štěchovic zakopali nacisti zlatý poklad. Podařilo se nám získat místa nejpravděpodobnějšího výskytu. Najdete odvahu tato místa prozkoumat?"></textarea><br />
+      <button onclick="addLocation()">Přidat vybrané místo</button><br />
+      Vybrané lokace: <div id="locationList"></div>
+      <button onclick="removeLocation()">Odebrat poslední místo</button><br />
+      <div id="logs"></div> <!-- Various messages are shown here, for dev purposes only -->
+      <button onclick="submitForm()">Vytvořit!</button>
+      <h1>Procházka s příběhem pro děti</h1>
+      <p>Motivujte svoje děti k pohybu, vyrobte jim hezkou procházku s příběhem! Vlastně jde o takový geo caching pro menší chodce, kteří uvítají interakci přes display telefonu či tabletu.<br />
+        Nejprve vyberte na mapě cílové lokace, může jich být kolik chcete, ale berte ohled na výdrž svých svěřenců.<br />
+        Každou vybranou lokaci přidejte do seznamu tlačítkem "Přidat vybrané místo". Pokud se spletete, tlačítkem "Odebrat poslední místo" odstraníte vždy poslední záznam.<br />
+        Jakmile budete spokojeni, obohaťte svou procházku nějakým příběhem.<br />
+        Heslo je potřebné pro pozdější editaci obsahu, přidání zastávek, změnu příběhu či pro smazání celé procházky. Ale i když heslo ztratíte, nic se neděje - všechny procházky budou časem automaticky smazány, pokud na ní nebude detekována žádná aktivita. A procházek si můžete vytvořit kolik jen chcete.<br />
+        Až budete mít všechno hotovo, stačí stisknout tlačítko "Vytvořit". Během několika vteřin dostanete odkaz na zbrusu nové stránky, které můžete dětem poslat, jako námět na sobotní dopoledne. Tyto automaticky generované stránky se aktualizují s každou Vaší změnou.<br />
+        A nezapomeňte místa osobně navštívit ještě před procházkou a ukryjte tam dětem nějakou "kešku", což může být kousek mapy k dalšímu bádání, kousek čokolády nebo zkráta heslo k další procházce? Kdo ví...</p>
+      <!-- <button onclick="getLocation()">Load current location</button> -->
+      <p><a href="https://vsechnovcloudu.cz" target = "_blank">Powered by Všechno v cloudu!</a></p>
+    </div>
+
+</body>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyC3iNZGkF0LOdRnc1t6Bwkf8jdGFI_Ifpg&callback=initialize"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
+<script src="js/map_interactive.js"></script>
+<script src="js/mapRetroStyle.js"></script>
+<script src="js/prepareForm.js"></script>
+<script src="js/sendForm.js"></script>
+<script src="js/currentLocation.js"></script>
+<script src="js/loadExisting.js"></script>
+</html>
