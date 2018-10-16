@@ -6,6 +6,7 @@ function addLocation(){
   selectedLocation.lng = marker.position.lng();
   allLocation.push(selectedLocation);
   console.log(allLocation);
+  displayInfo.innerHTML = '';
   var list = document.getElementById("locationList");
   var item = document.createElement("div");
   var newContent = document.createTextNode("Šířka: " + selectedLocation.lat + " Délka: " + selectedLocation.lng); 
@@ -15,10 +16,12 @@ function addLocation(){
 
 function removeLocation(){
   if (allLocation.length == 0) {
-    console.log('list of locations is already empty!')
+    console.log('list of locations is already empty!');
+    displayInfo.innerHTML = 'Již je vše smazané!';
   } else {
     allLocation.pop();
     console.log(allLocation);
+    displayInfo.innerHTML = '';
     var list = document.getElementById("locationList");
     list.removeChild(list.lastChild);
   }
