@@ -9,7 +9,7 @@ function initialize() {
   
   // Default location in case there is no GPS available
   var defLocation = new google.maps.LatLng(50.07537373166929,14.413673711556612);
-  var mapOptions = { zoom:12, mapTypeId: google.maps.MapTypeId.ROADMAP, center: defLocation, styles: styles }
+  var mapOptions = { zoom:7, mapTypeId: google.maps.MapTypeId.ROADMAP, center: defLocation, styles: retro }
   map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
   directionsDisplay.setMap(map);
   
@@ -35,5 +35,7 @@ function initialize() {
    }
  }
  // Once we got default map set, call for the actual GPS location
- getLocation();  
+ getLocation();
+ //Add listener to pull down menu for dynamic change of design
+ //detectDesignChange();
 }

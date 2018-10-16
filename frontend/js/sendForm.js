@@ -2,6 +2,7 @@ var request = {};
 
 function submitForm() {
   request.locations = allLocation;
+  request.design = document.getElementById("design").value;
   request.storyName = document.getElementById("storyName").value;
   request.story = document.getElementById("story").value;
   request.secretCode = document.getElementById("secretCode").value;
