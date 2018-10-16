@@ -36,6 +36,4 @@ function initialize() {
  }
  // Once we got default map set, call for the actual GPS location
  getLocation();
- //Add listener to pull down menu for dynamic change of design
- //detectDesignChange();
 }
