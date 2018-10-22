@@ -12,7 +12,6 @@ function showPosition(position) {
     var newLocation = {};
     newLocation.lat = position.coords.latitude;
     newLocation.lng = position.coords.longitude;
-    marker.setPosition(newLocation);
     map.setCenter(newLocation);
     map.setZoom(16);
 }
