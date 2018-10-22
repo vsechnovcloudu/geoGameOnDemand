@@ -16,9 +16,6 @@
       Tajný kód je potřebné pro pozdější editaci obsahu, přidání zastávek, změnu příběhu či pro smazání celé procházky. Ale i když heslo ztratíte, nic se neděje - všechny procházky budou časem automaticky smazány, pokud na ní nebude detekována žádná aktivita. A procházek si můžete vytvořit kolik jen chcete.<br />
       Váš tajný kód k procházce: <input id="secretCode" type="text" value="dupinozka"><br />
       Popište Váš příběh: <textarea id="story" placeholder="Říká se, že v okolí Štěchovic zakopali nacisti zlatý poklad. Podařilo se nám získat místa nejpravděpodobnějšího výskytu. Najdete odvahu tato místa prozkoumat?"></textarea><br />
-      <button onclick="addLocation()">Přidat vybrané místo</button><br />
-      Vybrané lokace: <div id="locationList"></div>
-      <button onclick="removeLocation()">Odebrat poslední místo</button><br />
       Vyberte si grafický styl:
       <select id = "design" name="styles" onchange="setMapDesign(value)">
         <option value="retro">retro</option>
@@ -43,9 +40,9 @@
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyC3iNZGkF0LOdRnc1t6Bwkf8jdGFI_Ifpg&callback=initialize"></script>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
-<script src="js/map_interactive.js"></script>
+<script src="js/map.js"></script>
 <script src="js/mapStyles.js"></script>
-<script src="js/prepareForm.js"></script>
+<script src="js/changeDesign.js"></script>
 <script src="js/sendForm.js"></script>
 <script src="js/currentLocation.js"></script>
 <script src="js/loadExisting.js"></script>
