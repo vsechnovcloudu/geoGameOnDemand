@@ -34,7 +34,7 @@ function initialize() {
     });
     markers[markerId] = marker; // cache marker in markers object
     bindMarkerEvents(marker); // bind right click event to marker
-    locations.push(markers[markerId]);
+    locations.push({position: markers[markerId].position});
   });
   
   var bindMarkerEvents = function(marker) {
